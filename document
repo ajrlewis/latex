@@ -1,0 +1,6 @@
+#! /bin/bash
+
+rm -f *.aux *.bbl *.blg *.log *.out *.toc  # Clean up old files
+latexmk -pdf document.tex  # Compile document
+latexmk -c  # Clean up unnecessary files
+open document.pdf  # Open PDF
