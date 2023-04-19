@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage{eso-pic}  % for adding logo to title page
+\usepackage{graphicx}  % for figurs
+\usepackage{booktabs}  % for table formatting
+\usepackage{natbib}  % for citations
+
+\graphicspath{{figures/}}
+
+\AddToShipoutPictureBG*{\AtPageUpperLeft{\raisebox{-4cm}{\hspace{2cm}\begin{minipage}[c]{4cm}\includegraphics[width=\linewidth]{logo.png}\end{minipage}}}}
+
+\begin{document}
+
+\title{My Document}
+\author{Your Name}
+\maketitle
+
+\section{Introduction}
+
+This is an introduction to my document \citep{dummy}.
+
+\input{figures/figure.tex}
+
+\input{tables/table.tex}
+
+\section{Conclusion}
+This is the conclusion to my document.
+
+\bibliographystyle{plain}
+\bibliography{document}
+
+\end{document}
