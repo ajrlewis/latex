@@ -1,9 +1,14 @@
 \documentclass{article}
 
+\usepackage{datatool}  % for reading varaibles from variables.txt
 \usepackage{eso-pic}  % for adding logo to title page
 \usepackage{graphicx}  % for figurs
 \usepackage{booktabs}  % for table formatting
 \usepackage{natbib}  % for citations
+
+\DTLsetseparator{ = }
+\DTLloaddb[noheader, keys={thekey,thevalue}]{mydata}{variables.txt}
+\newcommand{\includevariable}[1]{\DTLfetch{mydata}{thekey}{#1}{thevalue}}
 
 \graphicspath{{figures/}}
 
@@ -17,7 +22,7 @@
 
 \section{Introduction}
 
-This is an introduction to my document \citep{dummy}.
+This is an introduction to my document \citep{dummy}. And this is a variable ``\includevariable{FOO_BAR}''.
 
 \input{figures/figure.tex}
 
