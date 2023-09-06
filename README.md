@@ -1,6 +1,6 @@
-# latex_to_fork
+# latex
 
-This repository should be forked and provides a boiler plate LaTeX document.
+This repository provides a boiler plate LaTeX document.
 
 ## License
 
